@@ -14,42 +14,36 @@
 </head>
 <body>
   <h1>CrateWise — Privacy Policy</h1>
-  <p class="updated">Last updated: July 6, 2026</p>
+  <p class="updated">Last updated: July 25, 2026</p>
 
   <p>CrateWise ("the app") is a mobile app for cataloging vinyl records. This policy explains what information the app handles and how.</p>
 
-  <h2>No account, no server-side storage</h2>
-  <p>CrateWise does not require you to create an account and does not have its own backend server. Your collection data (records, photos, prices, lists, crates, genres) is stored locally on your device only, using standard on-device app storage. We do not receive, see, or store a copy of your collection.</p>
+  <h2>Account and server-side storage</h2>
+  <p>CrateWise requires an account, created via Google, Apple, or email sign-in. Once signed in, your collection data (artist, title, label, catalog number, year, format, genre, condition, notes, crate/bin location, cover art URL, price, and the lists/crates you organize records into) is stored on our server (hosted on Supabase) so it syncs across your devices. This data is access-controlled so that only your own account can read or write it.</p>
 
   <h2>Camera and photos</h2>
-  <p>CrateWise uses your device camera to photograph record covers and scan barcodes. Photos you take are stored locally on your device as part of your collection and are not uploaded anywhere by us. Photos are sent to third-party services (below) only for the purpose of identifying the record.</p>
+  <p>CrateWise uses your device camera to photograph record covers and scan barcodes. Photos you take are stored locally on your device as part of your collection. When you scan a record, the photo (and/or barcode) is sent to third-party services (below) to identify it. We do not upload or store a copy of your original photos on our server — only the identified record's metadata (artist, title, etc., described above) is saved server-side.</p>
 
   <h2>Third-party services used for identification</h2>
-  <p>To identify a scanned record, the app sends the photo and/or barcode to the following third-party services:</p>
+  <p>To identify a scanned record, the app sends the photo and/or barcode — via our own server — to the following third-party services:</p>
   <ul>
     <li><strong>Anthropic (Claude)</strong> — used to read cover art and labels via AI vision, to extract artist/title/label information. See <a href="https://www.anthropic.com/legal/privacy">Anthropic's privacy policy</a>.</li>
-    <li><strong>Discogs</strong> — used to look up and match releases, and to create draft marketplace listings if you choose to sell an item. See <a href="https://www.discogs.com/privacy">Discogs' privacy policy</a>.</li>
+    <li><strong>Discogs</strong> — used to look up and match releases. See <a href="https://www.discogs.com/privacy">Discogs' privacy policy</a>.</li>
     <li><strong>MusicBrainz</strong> — used as a fallback lookup source when a Discogs match isn't found. See <a href="https://metabrainz.org/privacy">MusicBrainz's privacy policy</a>.</li>
   </ul>
-  <p>These services are subject to their own privacy policies. CrateWise does not control how these third parties process data once it's sent to them.</p>
-
-  <h2>API keys</h2>
-  <p>During the current testing phase, CrateWise requires you to enter your own Anthropic API key and Discogs personal access token in the app's Settings screen. These keys are stored locally on your device only and are used solely to authenticate the requests described above. We do not receive or store your keys.</p>
-
-  <h2>Discogs selling feature</h2>
-  <p>If you choose to use the "Sell" feature, CrateWise creates draft listings in your own Discogs seller account via the Discogs API, using your Discogs token. No listing is published without your action inside your own Discogs account.</p>
+  <p>These services are subject to their own privacy policies. CrateWise does not control how these third parties process data once it's sent to them. To speed up repeat scans, we also maintain a shared, de-identified cache of previously-identified releases (metadata only, not your photo, not linked to your account) that any user's scan can match against.</p>
 
   <h2>Analytics and tracking</h2>
   <p>CrateWise does not include any advertising, analytics, or tracking SDKs. We do not collect usage data, device identifiers, or location data.</p>
 
   <h2>Data deletion</h2>
-  <p>Because your data lives only on your device, you can delete it at any time by removing items in the app or deleting/reinstalling the app itself. There is no remote copy for us to delete.</p>
+  <p>Photos and any locally-cached view of your collection can be removed at any time by deleting items in the app or deleting/reinstalling the app itself. To delete your account and all associated server-side data (collection and lists), email <a href="mailto:topdonn1@gmail.com">topdonn1@gmail.com</a> from the address associated with your account — we'll confirm once it's done. A self-serve in-app delete option is planned but not yet available.</p>
 
   <h2>Children's privacy</h2>
   <p>CrateWise is not directed at children and is not intended for use by anyone under 13.</p>
 
   <h2>Changes to this policy</h2>
-  <p>If this policy changes as the app evolves (for example, if a backend/account system is introduced), this page will be updated and the "Last updated" date above will change.</p>
+  <p>If this policy changes as the app evolves, this page will be updated and the "Last updated" date above will change.</p>
 
   <h2>Contact</h2>
   <p>Questions about this policy can be sent to <a href="mailto:topdonn1@gmail.com">topdonn1@gmail.com</a>.</p>
