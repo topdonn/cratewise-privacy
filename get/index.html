@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get CrateWise Beta</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 480px; margin: 0 auto; padding: 60px 24px; color: #FFFFFF; background: #0B0F0E; line-height: 1.6; text-align: center; }
+  h1 { color: #629AA9; font-size: 22px; margin-bottom: 8px; }
+  p { color: rgba(255,255,255,0.7); font-size: 15px; }
+  a.btn { display: block; margin: 20px 0; padding: 16px; border-radius: 12px; background: #629AA9; color: #06181C; font-weight: 700; text-decoration: none; font-size: 16px; }
+  a.btn.secondary { background: transparent; border: 1px solid rgba(255,255,255,0.25); color: #FFFFFF; }
+</style>
+</head>
+<body>
+  <h1>CrateWise Beta</h1>
+  <p>Redirecting you to the right store for your device…</p>
+  <a class="btn" href="https://testflight.apple.com/join/cJgX3hCw">iPhone — Join via TestFlight</a>
+  <a class="btn secondary" href="https://play.google.com/apps/internaltest/4701485572055366538">Android — Join via Google Play</a>
+  <script>
+    // Single QR / single link for both platforms: detect the visiting
+    // device and forward automatically. The two buttons above are the
+    // no-JS / desktop fallback in case detection or the redirect fails.
+    var ua = navigator.userAgent || '';
+    var IOS_URL = 'https://testflight.apple.com/join/cJgX3hCw';
+    var ANDROID_URL = 'https://play.google.com/apps/internaltest/4701485572055366538';
+    if (/iPhone|iPad|iPod/i.test(ua)) {
+      location.replace(IOS_URL);
+    } else if (/Android/i.test(ua)) {
+      location.replace(ANDROID_URL);
+    }
+    // Anything else (desktop, unknown UA) — stay on this page, show both buttons.
+  </script>
+</body>
+</html>
