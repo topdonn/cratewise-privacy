@@ -14,22 +14,27 @@
 </head>
 <body>
   <h1>CrateWise Beta</h1>
-  <p>Redirecting you to the right store for your device…</p>
+  <p id="msg">Redirecting you to the right store for your device…</p>
   <a class="btn" href="https://testflight.apple.com/join/cJgX3hCw">iPhone — Join via TestFlight</a>
-  <a class="btn secondary" href="https://play.google.com/apps/internaltest/4701485572055366538">Android — Join via Google Play</a>
+  <div id="android-steps" style="display:none; text-align:left;">
+    <p style="margin-bottom:4px;">Android needs one extra step first:</p>
+    <a class="btn secondary" href="https://groups.google.com/g/cratewise-beta-testers">1. Join the Google Group</a>
+    <a class="btn secondary" href="https://play.google.com/apps/testing/com.topdonn.cratewise">2. Then tap here to become a tester</a>
+  </div>
   <script>
-    // Single QR / single link for both platforms: detect the visiting
-    // device and forward automatically. The two buttons above are the
-    // no-JS / desktop fallback in case detection or the redirect fails.
+    // iOS: auto-redirect straight to TestFlight (no prerequisite).
+    // Android: do NOT auto-redirect — testers must join the Google Group
+    // before the Play opt-in link will work for them, so show both steps
+    // instead of silently forwarding into a broken/ineligible page.
     var ua = navigator.userAgent || '';
     var IOS_URL = 'https://testflight.apple.com/join/cJgX3hCw';
-    var ANDROID_URL = 'https://play.google.com/apps/internaltest/4701485572055366538';
     if (/iPhone|iPad|iPod/i.test(ua)) {
       location.replace(IOS_URL);
     } else if (/Android/i.test(ua)) {
-      location.replace(ANDROID_URL);
+      document.getElementById('msg').textContent = "You're on Android — follow both steps below:";
+      document.getElementById('android-steps').style.display = 'block';
     }
-    // Anything else (desktop, unknown UA) — stay on this page, show both buttons.
+    // Anything else (desktop, unknown UA) — stay on this page, show both paths.
   </script>
 </body>
 </html>
